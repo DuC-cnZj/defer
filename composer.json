@@ -11,10 +11,14 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "DucCnzj\\Defer\\": "src",
-            "DucCnzj\\Defer\\Tests\\": "tests"
+            "DucCnzj\\Defer\\": "src/"
         },
         "files": ["src/helper.php"]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DucCnzj\\Defer\\Tests\\": "tests/"
+        }
     },
     "require-dev": {
         "phpunit/phpunit": "^8.5"
