@@ -3,22 +3,22 @@
 use DucCnzj\Defer\Defer;
 
 if (! function_exists('defer')) {
-    function defer(\Closure $closure)
+    function defer(\Closure $closure, ?Defer &$defer)
     {
-        $d = new Defer();
-        $d->push($closure);
-
-        return $d;
+        $defer = $defer ?? new Defer();
+        (function ($closure) {
+            $this->push($closure);
+        })->bindTo($defer, Defer::class)($closure);
     }
 }
 
 if (! function_exists('exec_time')) {
-    function exec_time($tag = '')
+    function exec_time($tag, &$_)
     {
         $t = microtime(true);
 
-        return \defer(function () use ($t, $tag) {
+        defer(function () use ($t, $tag) {
             echo sprintf("%s 的执行时间是%f s\n", $tag, microtime(true) - $t);
-        });
+        }, $_);
     }
 }

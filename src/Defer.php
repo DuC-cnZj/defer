@@ -5,7 +5,7 @@ namespace DucCnzj\Defer;
 class Defer {
     protected $closures = [];
     
-    public function push(\Closure $closure)
+    private function push(\Closure $closure)
     {
         array_push($this->closures, $closure);
     }
