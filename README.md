@@ -12,9 +12,9 @@ composer require duccnzj/defer
 
 ```php
 $t = time();
-$_ = defer(function () use($t) {
+defer(function () use($t) {
     echo time()-$t."\n";
-});
+}, $_);
 ```
 
 
