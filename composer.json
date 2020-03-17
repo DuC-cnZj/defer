@@ -10,9 +10,6 @@
     ],
     "require": {},
     "autoload": {
-        "psr-4": {
-            "DucCnzj\\Defer\\": "src/"
-        },
         "files": ["src/helper.php"]
     },
     "autoload-dev": {

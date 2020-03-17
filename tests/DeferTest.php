@@ -30,9 +30,9 @@ class DeferTest extends TestCase
         $context->push('b');
     }
 
-    public function test3()
-    {
-        exec_time('daa', $_);
-        sleep(2);
-    }
+//    public function test3()
+//    {
+//        exec_time('daa', $_);
+//        sleep(2);
+//    }
 }

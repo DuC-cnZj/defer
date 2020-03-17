@@ -1,14 +1,26 @@
 <?php
 
-use DucCnzj\Defer\Defer;
 
 if (! function_exists('defer')) {
-    function defer(\Closure $closure, ?Defer &$defer)
+    function defer(\Closure $closure, &$defer)
     {
-        $defer = $defer ?? new Defer();
-        (function ($closure) {
-            $this->push($closure);
-        })->bindTo($defer, Defer::class)($closure);
+        $defer = $defer ?? new class {
+            protected $closures = [];
+
+            public function push(\Closure $closure)
+            {
+                array_push($this->closures, $closure);
+            }
+
+            public function __destruct()
+            {
+                foreach (array_reverse($this->closures) as $closure) {
+                    $closure();
+                }
+            }
+        };
+
+        $defer->push($closure);
     }
 }
 
