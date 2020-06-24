@@ -5,7 +5,7 @@
 ## Installing
 
 ```shell
-composer require duccnzj/defer
+composer require duc_cnzj/defer
 ```
 
 ## Usage
