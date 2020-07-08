@@ -1,6 +1,8 @@
 kind: pipeline
 name: default
 
+type: "kubernetes"
+
 steps:
 - name: install
   image: composer
