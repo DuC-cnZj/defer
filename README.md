@@ -1,5 +1,7 @@
 <h1 align="center"> php defer </h1>
 
+[![Build Status](http://dd.whoops-cn.club/api/badges/DuC-cnZj/defer/status.svg)](http://dd.whoops-cn.club/DuC-cnZj/defer)
+
 > 在php中实现go/defer，略微有点不一样
 
 ## Installing
